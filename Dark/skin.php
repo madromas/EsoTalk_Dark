@@ -30,7 +30,7 @@ class ETSkin_Dark extends ETSkin {
  */
 public function handler_init($sender)
 {
-	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css?family=Open+Sans:400,600");
+	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap");
 	$sender->addCSSFile("core/skin/base.css", true);
 	$sender->addCSSFile("core/skin/font-awesome.css", true);
 	$sender->addCSSFile($this->resource("styles.css"), true);
@@ -41,9 +41,13 @@ public function handler_init($sender)
 		$sender->addCSSFile($this->resource("mobile.css"), true);
 		$sender->masterView = "mobile.master";
 		$sender->addToHead("<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>");
+		$sender->addToHead("<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css'>");
 	}
 
 	
+
+
+
 
 	if (!C("skin.Dark.primaryColor")) $this->writeColors("#364159");
 }

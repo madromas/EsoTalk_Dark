@@ -45,9 +45,13 @@ echo "<strong class='title'><a href='".URL($conversationURL.((ET::$session->user
 if (ET::$session->get("highlight"))
 	echo "<span class='controls'><a href='".URL($conversationURL."/?search=".urlencode($data["fulltextString"]))."' class='showMatchingPosts'>".T("Show matching posts")."</a></span>";
 
-// If this conversation is stickied, output an excerpt from its first post.
-if ($conversation["firstPost"])
-	echo "<div class='excerpt'>".ET::formatter()->init($conversation["firstPost"])->inline(true)->firstLine()->clip(200)->format()->get()."</div>";
+// If this conversation is stickied, output an excerpt from its first post. Add "->firstLine()" after "inline(true)" to 
+// show only first line. Add "format()" to show html. 
+
+// Add or remove "firstPost" from "if ($conversation["firstPost"])" to show or not to show excerpt.
+if ($conversation[""])
+    echo "<div class='excerpt'>".ET::formatter()->init($conversation["firstPost"])->format()->inline(false)->clip(100)->get()."</div>";
+
 
 ?></div>
 
@@ -57,7 +61,7 @@ if ($conversation["firstPost"])
 		"username" => $conversation["startMember"],
 		"avatarFormat" => $conversation["startMemberAvatarFormat"],
 		"email" => $conversation["startMemberEmail"]
-	), "thumb"), " ",
+	), "start"), " ",
 	"</span>";
 ?></div>
 
@@ -78,9 +82,14 @@ echo "<span class='action'>".avatar(array(
 	"</span>";
 ?></div>
 <div class='col-replies'>
+<?php echo "<span><a href='".URL($conversationURL."/unread")."'>"?>
 <i class='icon-comment<?php if (!$conversation["replies"]) echo "-alt"; ?>'></i>
-<?php echo "<span><a href='".URL($conversationURL."/unread")."'>".Ts("%s reply", "%s replies", $conversation["replies"])."</a></span>";
+<?php echo "".Ts("%s", "%s", $conversation["replies"])."</a></span>";
 ?></div>
+
+<div class='col-views'>
+<?php echo "<i class='icon-eye-open'></i> ".Ts("%s", "%s", $data["conversation"]["views"])."";?>
+</div>
 </li>
 
 

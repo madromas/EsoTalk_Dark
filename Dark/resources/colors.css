@@ -17,7 +17,7 @@
 .scrubber li ul li.selected a,
 a
 {
-	color:#6c8293;
+	color:#c1c1c1;
 }
 
 .tabs.big li.selected a,
@@ -53,7 +53,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, in
 #hdr h1 span,
 .channel
 {
-	color:#c9d1d9;
+	color:#aaa;
 }
 
 
