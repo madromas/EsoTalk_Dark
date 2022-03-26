@@ -13,6 +13,117 @@ z-index order reference:
 600 messages
 */
 
+/* Signature */
+.signature {
+    border-top:0px solid #eee;
+    font-size:95%;
+    padding: 5px 12px;
+    margin: 1px 0 0;
+    word-wrap: break-word;
+}
+.signature p {margin-bottom:0}
+.signature-no-likes {
+    border-top:0px solid #eee;
+    font-size:95%;
+    padding: 5px 12px;
+    margin:1px 0 0;
+}
+
+.ls-social li a.ls-social-fb {
+  background-position: 0 0;
+}
+
+.ls-social li a.ls-social-gplus {
+  background-position: -75px 0;
+}
+
+.ls-social li a.ls-social-twitter {
+  background-position: -50px 0;
+}
+.ls-social li a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url(http://livestreet.ru/uploads/social.png) no-repeat;
+    background-position-x: 0%;
+    background-position-y: 0%;
+}
+
+
+
+
+
+/* Footer Logo */
+.footer_logo {
+  height: 20px;
+width: auto;
+opacity: 0.8;
+filter: grayscale(100%);
+margin-top: -6px;
+}
+
+/* Group Styles */
+  span.group-administrator {
+    color: #fff;
+    background-color: #E66B6B;
+    padding: 1px 8px 1px 8px;
+    border-radius: 10px;
+}
+
+span.group-suspended {
+    color: #fff;
+    background-color: #423D4D;
+    padding: 1px 8px 1px 8px;
+    border-radius: 10px;
+}
+
+span.group-moderator {
+    color: #fff;
+    background-color: #423D4D;
+    padding: 1px 8px 1px 8px;
+    border-radius: 10px;
+}
+
+span.group-1 {
+    color: #fff;
+    background-color: #325173;
+    padding: 1px 8px 1px 8px;
+    border-radius: 10px;
+}
+
+span.group-2 {
+    color: #fff;
+    background-color: #0A9CD5;
+    padding: 1px 8px 1px 8px;
+    border-radius: 10px;
+}
+
+span.group-3 {
+    
+}
+
+span.group-4 {
+    color: #fff;
+    background-color: #32733F;
+    padding: 1px 8px 1px 8px;
+    border-radius: 10px;
+}
+
+
+/* Description */
+.item-description{
+	font-size: 14px;
+	color: #888888;
+	margin:0; display:inline;
+	float: left !important;
+	padding-top: 2em;
+	top: 14px;
+	position: absolute !important;
+	margin-left: -18em;
+	overflow: hidden;
+	
+}
+
 
 /* Clearfix! */
 .clearfix {display:inline-block; display:block}
@@ -53,9 +164,12 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 /* Notifications button */
 #hdr .popupWrapper {margin:-5px 0; display:inline-block}
 #hdr .popupButton:hover {text-decoration:none}
-#hdr #notifications {color:rgba(255, 255, 255, 0.3)}
-#hdr #notifications.new, #hdr .active .popupButton {background-color:#fff; border-bottom-color:transparent}
-#hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#444 !important}
+#hdr #notifications {color: rgba(153, 151, 151, 0.3)}
+
+#hdr .button {border-radius:50px; font-size:100%; padding:9px 12px; margin:-7px 0}
+
+#hdr #notifications.new, #hdr .active .popupButton {background-color:#ff3c3c;}
+#hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#fff !important}
 #hdr .item-notifications {margin-right:-10px}
 
 
@@ -66,7 +180,7 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 
 
 /* Generic areas */
-.area, .sheet {border-radius:3px; margin-bottom:30px; margin-top:0}
+.area, .sheet {border-radius:10px; margin-bottom:30px; margin-top:0;}
 .area h3 {font-size:110%}
 
 
@@ -116,7 +230,7 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 
 
 /* Member online icon */
-.online {width:9px; height:9px; font-size:9px !important; color:#81cb37 !important}
+.online {width:9px; height:9px; font-size:9px !important; color:#81cb37 !important; margin-left: 0px;}
 
 
 /* Avatars */
@@ -224,10 +338,10 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 .tabs {margin:0; padding:1px; line-height:1em; overflow:hidden}
 .tabs li {float:left; list-style-type:none; margin:4px 7px 4px 0}
 .tabs li > a, .tabs li > span {padding:5px 7px; white-space:nowrap; font-size:85%; display:block}
-.tabs li > a {color:#666; cursor:pointer; border-radius:3px}
+.tabs li > a {color:#666; cursor:pointer; border-radius:5px}
 .tabs li > span {color:#666}
-.tabs li a:hover {border:1px solid #eee; margin:-1px; text-decoration:none}
-.tabs li.selected a {background-color:#fff; border:1px solid #d5d5d5; margin:-1px; color:#666}
+.tabs li a:hover {border:1px solid #eee; margin:-1px; text-decoration:none; border-radius:5px}
+.tabs li.selected a {background-color:#fff; border:1px solid #d5d5d5; margin:-1px; color:#666; border-radius:5px}
 .tabs li > a i, .tabs li > span i {margin-right:5px; font-size:14px; width:14px; display:inline-block}
 
 .tabs.big {font-size:120%; border-bottom:1px solid #ddd; padding-bottom:5px}
@@ -366,11 +480,11 @@ negative margins so they overlap the padding of the <li>. */
 
 
 /* Unread indicators */
-.unreadIndicator {font-size: 12px;
-font-weight: 400;
-color: #e44;
-padding: 0px;
-border-radius: 3px;
+.unreadIndicator {color: #fff;
+background-color: #FD4C4C;
+padding: 1px 6px 1px 6px;
+border-radius: 6px;
+font-size:12px;
 margin-right: 5px;}
 
 
@@ -469,11 +583,11 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 .postHeader h3 {display:inline; font-size:110%; margin:0}
 .postHeader h3, .postHeader h3 a {color:#000}
 .postHeader .info {display:inline}
-.postHeader .info > span, .postHeader .info > a {font-size:85%; margin-left:7px; color:#666}
+.postHeader .info > span, .postHeader .info > a {font-size:85%; margin-left:5px; color:#666}
 .postHeader .controls {float:right; margin-top:0px}
 
 .postBody {line-height:1.5em; overflow:auto; padding:0px 15px}
-.postBody img {vertical-align:bottom; max-width:100%}
+.postBody img {vertical-align:bottom; max-width:100%; border: 1px solid #30363d;}
 .postBody ul {list-style-type:disc}
 .postBody b {
   font-weight: 600;
@@ -487,7 +601,7 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 
 
 /* Post content (code, quotes, headers) */
-.postBody h4 {margin:1.2em 0 0.8em; font-size:130%; font-weight:normal}
+.postBody h4 {margin:1.2em 0 0.8em; font-size:130%; font-weight:400}
 
 blockquote {background:#f2f2f2; background:rgba(0, 0, 0, 0.05); margin:0 -15px 1em; padding:5px 7px 1px 36px; color:#555; position:relative}
 blockquote cite {display:inline; font-style:normal; font-weight:bold; margin-right:5px}
@@ -634,12 +748,13 @@ input.error, input.error:focus {border-color:#f59e79 !important}
 .fieldGroup, .checkboxGroup {line-height:1.7em}
 .colorSwatch {display:inline-block; height:21px; width:21px; border-radius:3px; margin-right:5px; vertical-align:-8px; border:1px solid rgba(0, 0, 0, 0.2)}
 
-.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:110%; padding:5px}
+.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:110%; border: 1px solid;border-radius: 20px !important; outline: 0;
+box-sizing: border-box; padding: 6px 12px;}
 .form input.color {font-size:100%; padding:3px; width:60px}
 
 
 /* Buttons */
-.button {height:23px; cursor:pointer; padding:1px 10px 3px; border:1px solid #bbb; border-radius:3px; line-height:19px; margin:0}
+.button {height:23px; cursor:pointer; padding:1px 10px 3px; border:1px solid #bbb; border-radius:50px; line-height:19px; margin:0}
 .button.big {height:26px; font-size:100%; padding:0 10px 2px; line-height:26px}
 
 .button i {margin:0 2px; font-size:14px; color:#666; line-height:12px}

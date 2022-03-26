@@ -42,13 +42,10 @@ public function handler_init($sender)
 		$sender->masterView = "mobile.master";
 		$sender->addToHead("<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>");
 		$sender->addToHead("<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css'>");
+		$sender->addToHead("<link rel='manifest' href='http://madway.net/manifest.json'>");
+		$sender->addToHead("<link rel='shortcut icon' href='../favicon.png' />");
 	}
-
 	
-
-
-
-
 	if (!C("skin.Dark.primaryColor")) $this->writeColors("#364159");
 }
 

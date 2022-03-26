@@ -41,6 +41,9 @@ echo "</span> ";
 // Output the conversation title, highlighting search keywords.
 echo "<strong class='title'><a href='".URL($conversationURL.((ET::$session->user and $conversation["unread"]) ? "/unread" : ""))."'>".highlight(sanitizeHTML($conversation["title"]), ET::$session->get("highlight"))."</a></strong> ";
 
+// Output the Jump To Last post ">>".
+// echo "<span class='controls'><a href='".URL($conversationURL."/last")."' class='jumpToLast' title='Jump to last'><i class='fas fa-angle-double-right'></i></a></span>";
+
 // If we're highlighting search terms (i.e. if we did a fulltext search), then output a "show matching posts" link.
 if (ET::$session->get("highlight"))
 	echo "<span class='controls'><a href='".URL($conversationURL."/?search=".urlencode($data["fulltextString"]))."' class='showMatchingPosts'>".T("Show matching posts")."</a></span>";
@@ -56,13 +59,13 @@ if ($conversation[""])
 ?></div>
 
 <div class='col-firstPost'><?php
-	echo "<span class='action' title='Author'>".avatar(array(
+	echo "<span class='action' title='Author (".$conversation["startMember"].")'><a href='".URL(memberURL($conversation["startMemberId"], $conversation["startMember"]))."'>".avatar(array(
 		"memberId" => $conversation["startMemberId"],
 		"username" => $conversation["startMember"],
 		"avatarFormat" => $conversation["startMemberAvatarFormat"],
 		"email" => $conversation["startMemberEmail"]
 	), "start"), " ",
-	"</span>";
+	"</a></span>";
 ?></div>
 
 <div class='col-channel'><?php
@@ -70,16 +73,23 @@ $channel = $data["channelInfo"][$conversation["channelId"]];
 echo "<a href='".URL(searchURL("", $channel["slug"]))."' class='channel channel-{$conversation["channelId"]}' data-channel='{$channel["slug"]}'>{$channel["title"]}</a>";
 ?></div>
 <div class='col-lastPost'><?php
-echo "<span class='action'>".avatar(array(
+echo "<span class='action'><a href='".URL(memberURL($conversation["lastPostMemberId"], $conversation["lastPostMember"]))."'>".avatar(array(
 		"memberId" => $conversation["lastPostMemberId"],
 		"username" => $conversation["lastPostMember"],
 		"avatarFormat" => $conversation["lastPostMemberAvatarFormat"],
 		"email" => $conversation["lastPostMemberEmail"]
-	), "thumb"), " ",
-	sprintf(T("%s posted %s"),
+	), "thumb"), "  ",
+	"</a>",
+	sprintf(T("%s <i class='far fa-clock'></i> %s"),
 		"<span class='lastPostMember name'>".memberLink($conversation["lastPostMemberId"], $conversation["lastPostMember"])."</span>",
-		"<a href='".URL($conversationURL."/unread")."' class='lastPostTime'>".relativeTime($conversation["lastPostTime"], true)."</a>"),
+		"<a href='".URL($conversationURL."/unread")."' class='lastPostTime' title='Go to last unread'>".relativeTime($conversation["lastPostTime"], true)."</a>"),
 	"</span>";
+	
+	
+	
+	
+	
+	
 ?></div>
 <div class='col-replies'>
 <?php echo "<span><a href='".URL($conversationURL."/unread")."'>"?>
