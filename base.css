@@ -13,6 +13,17 @@ z-index order reference:
 600 messages
 */
 
+
+/* Unread */
+.unreadButton {}
+.unreadButton:hover {text-decoration:none}
+.unreadButton i {color:#ccc !important; font-size:14px}
+/*.unreadButton.unread i {color:#fc0 !important}*/
+.unreadButton:hover i {color:#fc0 !important; text-decoration:none}
+.unreadButton:active i {color:#da0 !important; text-decoration:none}
+
+
+
 /* Signature */
 .signature {
     border-top:0px solid #eee;
@@ -144,7 +155,7 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 #hdr .popupButton:hover {text-decoration:none}
 #hdr #notifications {color: rgba(40, 40, 40, 0.3)}
 
-#hdr .button {border-radius:50px; font-size:100%; padding:8px 10px; margin:-7px 0}
+#hdr .button {border-radius:50px; font-size:100%; padding:8px 11px; margin:-7px 0}
 
 #hdr #notifications.new, #hdr .active .popupButton {background-color:#ff3c3c;}
 #hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#fff !important}
@@ -163,10 +174,9 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 
 
 /* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
-.thing {border:1px solid #ddd; border-radius:3px; background:#fff; padding:1px; position:relative}
-.thing:before {border-color:#ddd}
+.thing {border:1px solid #aeaeae; border-radius:3px; background:#fff; padding:1px; position:relative}
+.thing:before {border-color:#aeaeae}
 .thing:after {border-color:#fff}
-
 
 /* Controls */
 .controls {list-style-type:none; padding:0; font-size:85%; white-space:nowrap}
@@ -533,7 +543,7 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 .scrubber li ul {list-style-type:none; padding:0 0 0 15px; margin:0; font-size:85%}
 .scrubber li ul li.selected a {color:#000}
 
-.scrubber .scrubber-nav {border-left:0}
+.scrubber .scrubber-nav {border-left:0; font-size:13px}
 .scrubber .scrubber-nav a {padding-left:0}
 
 
@@ -565,7 +575,7 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 .postHeader .controls {float:right; margin-top:0px}
 
 .postBody {line-height:1.5em; overflow:auto; padding:0px 15px}
-.postBody img {vertical-align:bottom; max-width:80%; border: 1px solid #30363d;}
+.postBody img {vertical-align:bottom; max-width:80%; border: 1px solid #aeaeae;}
 .postBody ul {list-style-type:disc}
 .postBody b {
   font-weight: 600;
